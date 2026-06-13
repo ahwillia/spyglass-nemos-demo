@@ -1,0 +1,21 @@
+# Python
+__pycache__/
+*.py[cod]
+*.egg-info/
+.eggs/
+build/
+dist/
+
+# Virtual environments
+.venv/
+venv/
+env/
+
+# Generated demo artifact at repo root (the curated copy in docs/ is committed)
+/tuning_curves.png
+
+# Jupyter / editors
+.ipynb_checkpoints/
+.vscode/
+.idea/
+.DS_Store

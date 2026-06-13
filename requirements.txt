@@ -1,0 +1,12 @@
+# Mirrors pyproject.toml for the plain-pip flow. Use Python 3.12:
+# nemos>=0.2.9 needs >=3.12, and numpy<2.0 (via numba/pynapple) has no >=3.13 wheels.
+numpy<2.0
+pynapple>=0.10.1
+nemos>=0.2.9
+pynwb>=2.8
+matplotlib>=3.7   # only needed for `--plot`
+
+# --- Spyglass side (optional; only needed for `python integrated_pipeline.py --spyglass`) ---
+# Requires a configured DataJoint/MySQL backend. See:
+# https://lorenfranklab.github.io/spyglass/latest/notebooks/00_Setup/
+# spyglass-neuro

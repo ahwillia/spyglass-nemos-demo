@@ -1,0 +1,26 @@
+[project]
+name = "spyglass-nemos-example"
+version = "0.1.0"
+description = "Demo: feeding Spyglass-managed neural data into NeMoS via pynapple to fit a GLM."
+readme = "README.md"
+license = { text = "MIT" }
+# Python 3.12 is the sweet spot: nemos>=0.2.9 needs >=3.12, while numpy<2.0
+# (required transitively by numba via pynapple) has no wheels for >=3.13.
+requires-python = ">=3.12,<3.13"
+dependencies = [
+    "numpy<2.0",
+    "pynapple>=0.10.1",
+    "nemos>=0.2.9",
+    "pynwb>=2.8",
+    "matplotlib>=3.7",
+]
+
+[project.optional-dependencies]
+# Only needed for `python integrated_pipeline.py --spyglass`, and requires a
+# configured DataJoint/MySQL backend. See:
+# https://lorenfranklab.github.io/spyglass/latest/notebooks/00_Setup/
+spyglass = ["spyglass-neuro"]
+
+[tool.uv]
+# Keep the resolution reproducible-ish for a demo; nothing exotic needed.
+package = false
